@@ -43,22 +43,22 @@
 
     <div>
         <div id="task-list">
+            <ul class="todo-list">
 
+            </ul>
         </div>
     </div>
 
-    <template>
-        <ul class="todo-list">
-            <div class="todo dark-todo">
-                <li class="todo-item">Une tâche à faire</li>
-                <button class="check-btn light-button">
-                    <i class="fas fa-check"></i>
-                </button>
-                <button class="delete-btn light-button">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </div>
-        </ul>
+    <template id="task">
+        <div class="todo dark-todo">
+            <li class="todo-item"></li>
+            <button class="check-btn light-button">
+                <i class="fas fa-check"></i>
+            </button>
+            <button class="delete-btn light-button">
+                <i class="fas fa-trash"></i>
+            </button>
+        </div>
     </template>
 
     <script src="js/main.js" defer></script>
