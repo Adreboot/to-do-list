@@ -4,6 +4,18 @@ checkbox.addEventListener("change", () => {
     changeTheme();
 })
 
+const addTaskButton = document.querySelector(".todo-btn");
+
+addTaskButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const textInput = document.querySelector("form input");
+    addTask(textInput.value);
+})
+
+const todoList = document.querySelector(".todo-list");
+
+todoList.addEventListener('click', (e) => removeOrCheckTask(e));
+
 function changeTheme(){
     document.body.classList.toggle("dark");
     document.querySelectorAll(".todo")?.forEach(element => element.classList.toggle("dark-todo"));
@@ -20,10 +32,13 @@ function addTask(taskName){
     taskList.appendChild(taskToAdd);
 }
 
-const addTaskButton = document.querySelector(".todo-btn");
+function removeOrCheckTask(event){
+    const item = event.target;
 
-addTaskButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    const textInput = document.querySelector("form input");
-    addTask(textInput.value);
-})
+    if(item.classList[0] === ("delete-btn")){
+        item.parentElement.remove();
+
+    }else if (item.classList[0] === ("check-btn")){
+        item.parentElement.classList.toggle("completed");
+    }
+}
