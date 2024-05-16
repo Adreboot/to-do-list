@@ -6,7 +6,7 @@ checkbox.addEventListener("change", () => {
 
 function changeTheme(){
     document.body.classList.toggle("dark");
-    document.querySelector(".todo")?.classList.toggle("dark-todo");
+    document.querySelectorAll(".todo")?.forEach(element => element.classList.toggle("dark-todo"));
 }
 
 function addTask(taskName){
