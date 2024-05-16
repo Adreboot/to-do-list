@@ -28,6 +28,12 @@ function addTask(taskName){
 
     taskLi.innerText= taskName;
 
+    const taskDiv = taskToAdd.querySelector("div");
+
+    if(document.body.classList.contains("dark")){
+        taskDiv.classList.add("dark-todo");
+    }
+
     const taskList = document.querySelector(".todo-list");
     taskList.appendChild(taskToAdd);
 }
